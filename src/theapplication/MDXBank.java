@@ -33,6 +33,6 @@ public class MDXBank  {
     public void withdraw(double value, String name)
         {
          System.out.println("The user " + name + " withdraws an amount " + value);
-         accountBalance = accountBalance - value*(-1);
+         accountBalance = accountBalance - value;
         }
 }

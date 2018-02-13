@@ -26,16 +26,19 @@ public class TheApplication {
         userTrans.add(new User("Jessie", "Pinkman", bank_acc, user3Transactions));
         userTrans.add(new User("Hank", "Schrader", bank_acc, user4Transactions));
 
-        System.out.println("Welcome to MDX Bank. Select an option: \n");
+        
+
+        while (true) {
+            System.out.println("Welcome to MDX Bank. Select an option: \n");
         System.out.println("1.) Create Bank Account \n");
         System.out.println("2.) Create User \n");
         System.out.println("3.) Run Simulation \n");
-        System.out.println("4.) Exit \n");
+        System.out.println("4.) Preview Bank balance \n");
+        System.out.println("5.) Exit \n");
+        
 
         System.out.println("Enter your desired option: ");
         int option = input.nextInt();
-
-        while (true) {
             {
 
                 System.out.println("Enter your desired option: ");
@@ -66,8 +69,14 @@ public class TheApplication {
                 for (int i = 0; i < 4; i++) {
                     userTrans.get(i).start();
                 }
+                
             }
-            if (option == 4) {
+            if(option == 4)
+            {
+            System.out.println("The current bank balance is " + bank_acc.getAccountBalance() + "£");
+           
+            }
+            if (option == 5) {
                 System.exit(0);
             }
         }
