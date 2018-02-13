@@ -24,13 +24,13 @@ public class MDXBank  {
         return this.accountBalance;
         }
     
-    public  void deposit(double value, String name)
+    public synchronized void deposit(double value, String name)
         {
          System.out.println("The user " + name + " deposits an amount " + value);
          accountBalance = accountBalance + value;
         }
     
-    public void withdraw(double value, String name)
+    public synchronized void withdraw(double value, String name)
         {
          System.out.println("The user " + name + " withdraws an amount " + value*(-1));
          accountBalance = accountBalance - value;
