@@ -10,7 +10,7 @@ package theapplication;
  *
  * @author Mohammed
  */
-public class User {
+public class User extends Thread{
     public String name;
     public String surname;
     public MDXBank bankAccount;
@@ -24,5 +24,16 @@ public class User {
     this.bankAccount = bA;
     this.transactionList = tL;
 
+    }
+    @Override 
+    public void run(){
+        for (int i=0;i<transactionList.length;i++){
+            if(transactionList[i]<=0){
+                bankAccount.withdraw(transactionList[i],this.name);
+            }
+            if(transactionList[i]>0){
+                bankAccount.deposit(transactionList[i], this.name);
+            }
+        }
     }
 }

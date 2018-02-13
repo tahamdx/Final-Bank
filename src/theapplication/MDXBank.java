@@ -4,7 +4,7 @@ package theapplication;
  *
  * @author Mohammed
  */
-public class MDXBank {
+public class MDXBank  {
     private long accountNo;
     private double accountBalance;
     
@@ -24,15 +24,15 @@ public class MDXBank {
         return this.accountBalance;
         }
     
-    public void deposit(double value, User u)
+    public void deposit(double value, String name)
         {
-         System.out.println("The user " + u.name + " deposits an amount " + value);
+         System.out.println("The user " + name + " deposits an amount " + value);
          accountBalance = accountBalance + value;
         }
     
-    public void withdraw(double value, User u)
+    public void withdraw(double value, String name)
         {
-         System.out.println("The user " + u.name + " withdraws an amount " + value);
-         accountBalance = accountBalance - value;
+         System.out.println("The user " + name + " withdraws an amount " + value);
+         accountBalance = accountBalance - value*(-1);
         }
 }
